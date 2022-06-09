@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>橘子哥主页</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="icon" href="images/orange.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/orange.ico" type="image/x-icon">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+        $("#topnav").load("topnav.html");
+    })
+    $(function () {
+        $("#rightcolumn").load("rightcolumn.html");
+    })
+    $(function () {
+        $("#footer").load("footer.html");
+    })
+    $(function () {
+        $("#demo").load("/xx/demo/demo.html");
+    })
+    $(function () {
+        $("#player").load("player.html");
+    })
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4261d530a5ccf73c47b3efe2a117ed23";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+</head>
+<body>
+
+  <div id="demo"></div>
+
+<div class="header">
+    <h1>OrangeTaoooo</h1>
+    <p>人生天地间，忽如远行客。</p>
+</div>
+
+<div id="topnav"></div>
+
+<div class="row">
+  
+  <div class="leftcolumn">
+    <div class="card">
+      <p align="center"><img  broder="2"src="images/index.jpg"  width=100%></p>
+      <p align="center">
+        后来许多人问我一个人夜晚踟蹰路上的心情<br><br>
+        我想起的却不是孤单和路长<br><br>
+        而是波澜壮阔的海和天空中闪耀的星光<br><br>
+      </p>
+      <h5 align="right">2021.11.22</h5>
+    </div>
+  </div>
+    
+  <div id="rightcolumn"></div>
+
+</div>
+
+<div id="footer"></div>
+<script src="player.html"></script>
+
+
+
+</body>
+</html>

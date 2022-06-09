@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>橘子哥主页</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+        $("#topnav").load("d_topnav.html");
+    })
+    $(function () {
+        $("#rightcolumn").load("../rightcolumn.html");
+    })
+    $(function () {
+        $("#footer").load("../footer.html");
+    })
+  </script>
+   <style>
+    p {text-indent:30px;}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>橘子哥的学习记录</h1>
+  <p>正经人谁提莫写日记啊！！</p>
+</div>
+
+<div id="topnav"></div>
+
+<div class="row">
+  <div class="leftcolumn">
+
+        <div class="card">
+            <h2>PHP的小坑记录</h2>
+            <h5>2021 年 10 月 29日</h5>
+            
+            <p>用php的foreach坑，循环拿到的东西居然只是复制，并不是指针。直接在循环赋给的值上做修改是改不到原表的。</p>
+            <p>附原答案：</p>
+            <p>翻到PHP文档的foreach那页这样写道：</p>
+            <p>“foreach 语法结构提供了遍历数组的简单方式。foreach 仅能够应用于数组和对象，如果尝试应用于其他数据类型的变量，或者未初始化的变量将发出错误信息。有两种语法：</p>
+            <p>foreach (array_expression as $value)    statement foreach (array_expression as $key => $value)    statement</p>
+            <p>第一种格式遍历给定的 array_expression 数组。每次循环中，当前单元的值被赋给 $value 并且数组内部的指针向前移一步（因此下一次循环中将会得到下一个单元）。</p>
+            <p>第二种格式做同样的事，只除了当前单元的键名也会在每次循环中被赋给变量 $key。”</p>
+            <p>那么“第一种格式遍历给定的 array_expression 数组。每次循环中，当前单元的值被赋给 $value 并且数组内部的指针向前移一步（因此下一次循环中将会得到下一个单元）。”是什么意思？意思就是说用foreach来遍历数组，所操作的是指定数组的一个拷贝，而不是数组本身。就像有一个克隆的你，别人对克隆的你不管怎么拳打脚踢，对你也是没有影响的。</p>
+            <p>例如：</p>
+            <p>foreach($array as $k => $v){</p>
+            <p>     　　$v = 1;</p>
+            <p>    }</p>
+            <p>这样的修改方法修改的并不是$array本身，是修改它拷贝的一个数组，虽然一样但不是$array.所以对$array没有影响。</p>
+            <p>摘自http://www.cnblogs.com/yangwenxin/p/5845212.html</p>
+            <p> 另外，对自己的规划有了更明确一定的想法。即使目前写一些mmorpg游戏的逻辑，往后也有一个加入独立游戏工作室做单机的梦想。</p>
+            <p>毕竟人没有梦想，和咸鱼有什么区别？哈哈。</p>
+            
+        </div>
+      
+  </div>
+  <div id="rightcolumn"></div>
+</div>
+
+    <div id="footer"></div>
+
+<!-- <footer id="footer" class="overlay animated from-top">
+    <div class="cr">		
+        Copyright&copy;2021. Design by WuHantao
+    </div>
+</footer> -->
+</body>
+</html>

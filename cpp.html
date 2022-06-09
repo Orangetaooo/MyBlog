@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>橘子哥学习记录站</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+        $("#topnav").load("topnav.html");
+    })
+    $(function () {
+        $("#rightcolumn").load("rightcolumn.html");
+    })
+    $(function () {
+        $("#footer").load("footer.html");
+    })
+  </script>
+  <style>
+    a.sty:link {color:#000000;text-decoration:none;}
+    a.sty:visited {color:#000000;text-decoration:none;}
+    a.sty:hover {color:#68a7af;text-decoration:none;}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>C++从入门到入土全过程实录</h1>
+  <p>C++世界上最好的语言🐶</p>
+</div>
+
+<div id="topnav"></div>
+
+<div class="row">
+  <div class="leftcolumn">
+      <div class="card">
+        <a class="sty" href = "cpp/211209.html"><h2>类对象作为函数参数传递，会调用析构函数</h2></a>
+        <h5>2021 年 12 月 9日</h5>
+      </div>
+    
+  </div>
+  <div id="rightcolumn"></div>
+</div>
+
+<div id="footer"></div>
+
+
+</body>
+</html>

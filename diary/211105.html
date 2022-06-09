@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>橘子哥主页</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+  $(function () {
+      $("#topnav").load("d_topnav.html");
+  })
+  $(function () {
+      $("#rightcolumn").load("../rightcolumn.html");
+  })
+  $(function () {
+      $("#footer").load("../footer.html");
+  })
+</script>
+<style>
+    p {text-indent:30px;}
+  </style>
+
+</head>
+<body>
+
+<div class="header">
+  <h1>橘子哥的学习记录</h1>
+  <p>正经人谁提莫写日记啊！！</p>
+</div>
+
+<div id="topnav"></div>
+
+<div class="row">
+  <div class="leftcolumn">
+
+        <div class="card">
+            <h2>Apache踩坑实录</h2>
+            <h5>2021 年 11 月 5日</h5>
+
+<p>最近老大给了个小任务，把用php写的脚本做成用户界面给策划（没有程序员思维）们用。</p>
+<p>虽然开发服上有服务部署的东西，具体是什么不知道，但在本地测试的时候还是需要自己挂个apache来搞。</p>
+<p>作为一个后端，突然搞前端的东西，html、css、js、php都不太熟，所以碰到的稀奇古怪的问题都特别多，而且不好问导师。那就只能自己一点一点摸索咯~</p>
+<p>首先，所有操作都基于ubuntu而非windows，这点是需要提前说明的。</p>
+<p>碰到的问题：</p>
+<p>1、更换Apache默认识别的根目录，是/etc/apache2/apache.cond目录下，而且需要sudo进去，不然就要先chmod更改权限。这样才能把其他文件夹下自己的网页部署上去。不然新安装的会默认在/var/www/html文件夹下，比如初始的index.html就在这个文件下。</p>
+<p>2、还有一个很坑的文明，如果你需要用你的html链接php，首先肯定要装php包啦（废话），除此之外，由于系统识别的配置问题（猜的），一定要先装apache，再装php，不然你的apache很可能不能解析php。网上查阅了一堆博客都没有很好的解决办法，配置及其繁琐，最后无奈把都卸了，再按顺序装好。</p>
+<p>3、关于你的apache服务启动不了的问题。有一个可能情况是你的80端口被占用了。因为apache的默认端口就是80端口，这时候你需要netstat -anp |grep 80看看80端口是否被占用了，在关闭apache的状态下这个端口下应该是没有进程的。如果有进程的话，记得加上sudo看一下进程id，然后用kill -9 id 把进程全杀了，不然会报错。</p>
+<p>4、一点小感悟，很多问题都不是简单的问题，所以需要掌握看log的技能，基本上这些软件包都有地方给你去看log，所以学会看log很重要。</p>
+<p>今天就写这么多啦。这周准备去吃火锅，嘿嘿。</p>
+<p>另外半个月的健身加控制饮食让我的身体趋于健康化，内脏脂肪已经回归到正常水平了。说明这段时间的努力并没有白费，体重也掉了有6斤左右。继续坚持吧。我可以的，，，</p>
+            
+        </div>
+      
+  </div>
+  <div id="rightcolumn"></div>
+</div>
+
+    <div id="footer"></div>
+
+<!-- <footer id="footer" class="overlay animated from-top">
+    <div class="cr">		
+        Copyright&copy;2021. Design by WuHantao
+    </div>
+</footer> -->
+</body>
+</html>

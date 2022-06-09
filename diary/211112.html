@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>橘子哥主页</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+  $(function () {
+      $("#topnav").load("d_topnav.html");
+  })
+  $(function () {
+      $("#rightcolumn").load("../rightcolumn.html");
+  })
+  $(function () {
+      $("#footer").load("../footer.html");
+  })
+</script>
+<style>
+    p {text-indent:30px;}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>橘子哥的学习记录</h1>
+  <p>正经人谁提莫写日记啊！！</p>
+</div>
+
+<div id="topnav"></div>
+
+<div class="row">
+  <div class="leftcolumn">
+
+        <div class="card">
+            <h2>如何用python做一个可以跑php脚本，且不用配置php和python环境的工具？</h2>
+            <h5>2021 年 11 月 18日</h5>
+            
+            <p>本篇文章涉及的知识包括python-tkinter、python、windows下dos命令行。</p> 
+            <p>其实这篇文章的由来与上一篇Apache踩坑有关系，因为在做了html的用户界面之后，老大表示，你需求搞错了o(╥﹏╥)o，不可能每一个策划我都给他们搭一个apache吧。需要他们在本地也可以使用的用户界面。</p> 
+            <p>于是，我想到了大学用py的tkinter库做人脸识别UI的情景。当时答辩老师还夸了我说界面弄得不错。</p> 
+            <p>那既然这样，不多说就直接开始干吧。</p> 
+            <p>UI的事情解决了，还有一个问题如何让用户(策划们)降低使用成本，也就是说尽量减少环境配置这个环节，(要记住策划们没有程序员思维，大多不喜欢倒腾。</p> 
+            <p>这个问题最后我解决的还比较好，实现了0配置，怎么做到的呢？且听我一一道来：<br>
+            <p>解决环境配置的问题，无非是两个：一个是python环境，一个是php环境，策划们大多是在windows下操作也就是dos环境，这个是不需要配置的。</p> 
+            <p>Python环境的解决方案是使用python下的pyinstaller库来将程序打包成.exe可执行文件。这里简单说一下具体怎么用吧。首先得用pip安装pyinstaller这个库，接下来，用pyinstaller -F 文件名 来打包安装。这里说一下，这个命令打包的可执行文件在运行时会自动跑一个cmd用来输出控制台打印。你也可以加一个-w来取消这个设定。但是本我的这个项目必须有这个cmd，我想了下愿意应该是php那部分代码捕捉的异常不全，在某些地方报错的时候必须用到这个cmd，不然就执行不了。</p> 
+            <p>其次就是php环境的解决方案。这个比较笨了，直接把php的安装包扔到项目里，然后要用的时候在dos命令行里，直接用路径下的php.exe去执行php程序。</p> 
+            <p>最终整个程序包大概90M，用企业微信自带的压缩之后大概40M左右，而且不需要任何配置，策划们点开exe就可以直接用。后续可以创建一个快捷方式拖到桌面上，就可以和其他应用软件一样使用了。</p> 
+            <p>下面看下UI吧，其实tkinter算是比较老的gui开发库了，所以界面会有点丑，但是相对来说学习成本低，轻量级，不面向客户开发还是挺好用的。（指自己人用）</p> 
+            <div align=center><img border="2" src="/images/p2.jpg" width=80% ></div> 
+            
+        </div>
+      
+  </div>
+  <div id="rightcolumn"></div>
+</div>
+
+    <div id="footer"></div>
+
+<!-- <footer id="footer" class="overlay animated from-top">
+    <div class="cr">		
+        Copyright&copy;2021. Design by WuHantao
+    </div>
+</footer> -->
+</body>
+</html>
+   

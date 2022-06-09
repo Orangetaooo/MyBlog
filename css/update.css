@@ -1,0 +1,51 @@
+.ui-timeLine>.item {
+    width: 100%;
+    display: block;
+    position: relative;
+    text-align: justify;
+    word-break: break-all;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+.ui-timeLine .line, .ui-timeLine>.activeLine {
+    position: absolute;
+    left: 29px;
+    width: 4px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+}
+.ui-timeLine .dot {
+    z-index: 100;
+    display: inline-block;
+    position: absolute;
+    left: 25px;
+    top: 30px;
+    padding: 3px;
+    border: 3px solid #eee;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px #ccc;
+}
+.ui-timeLine .active {
+    border: 3px solid rgba(0, 0, 0, 0.8);
+}
+.ui-timeLine>.item>.box {
+    padding: 5px 0;
+}
+.ui-timeLine>.item .cbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px #ccc;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.925) 0%, rgba(134, 134, 134, 0.233) 100%);
+}
+.ui-timeLine>.item .cbox>div{
+    margin:0 10px;
+    color: #FFFFFF;
+}
+.imageContent img{
+    width: 100px;height: 100px;
+    border-radius:  50%;
+}

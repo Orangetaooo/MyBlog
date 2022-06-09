@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>元旦倒计时</title>
+    <style type="text/css">
+        #msg{
+            text-align: center;
+            font-size: 130px;
+        }
+
+        #timer{
+            font-size: 130px;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function showTime(){
+            var currentTime=new Date();
+            var endTime=new Date("2022/1/1");
+            var remainTime=endTime.getTime()-currentTime.getTime();
+            // 1天=24小时  1小时=60分钟  1分钟=60秒  1秒=1000毫秒
+            var day=Math.floor(remainTime/(24*60*60*1000));
+            var hour=Math.floor((remainTime-day*24*60*60*1000)/(60*60*1000));
+            var minute=Math.floor((remainTime-day*24*60*60*1000-hour*60*60*1000)/(60*1000));
+            var second=Math.floor((remainTime-day*24*60*60*1000-hour*60*60*1000-minute*60*1000)/(1000));
+            if(remainTime<0){
+                document.getElementById("msg").innerHTML="元旦已经结束！";
+            }else{
+            var time=day+"天 "+hour+"时"+minute+"分"+second+"秒！";
+            document.getElementById("timer").innerHTML=time;
+            }
+
+        }
+        setInterval("showTime()",1000);
+    </script>
+</head>
+<body>
+    <div id="msg">距离放假还有：<br/><span id="timer"></span><br/>一定要Holder住!!!!</div>
+</body>
+</html>
